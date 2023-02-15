@@ -19,6 +19,7 @@ const Product = ({prod}) => {
             {prod.rating} from {prod.numReviews} reviews
           </div>
         </Card.Text>
+        <Card.Text as='h3'>${prod.price}</Card.Text>
       </Card.Body>
     </Card>
   )
