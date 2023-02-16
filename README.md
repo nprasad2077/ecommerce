@@ -11,8 +11,6 @@
 
 ## Plan Summary
 
-Building an e-commerce website requires a lot of work and planning. It involves designing a user-friendly interface, implementing a payment gateway, managing inventory, and much more.
-
 Step 1: Plan and Design
 
 The first step is to plan and design the e-commerce website. This involves defining the scope of the project, determining the features and functionality of the site, creating wireframes and mockups, and deciding on a color scheme and layout. This can be done using tools such as Figma, Sketch, or Adobe XD.
