@@ -49,6 +49,20 @@ const ProductScreen = () => {
         </Col>
 
         <Col md={3}>
+          <Card>
+            <ListGroup variant='flush'>
+              <ListGroupItem>
+                <Row>
+                  <Col>
+                    Price: 
+                  </Col>
+                  <Col>
+                    <strong>{product.price}</strong>
+                  </Col>
+                </Row>
+              </ListGroupItem>
+            </ListGroup>
+          </Card>
 
         </Col>
       </Row>
