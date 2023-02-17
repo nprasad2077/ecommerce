@@ -1,13 +1,29 @@
 # E-Commerce Application (In development 😁👷‍♂️👷👷‍♀️)
 
+## Features
+    - Full feature product shopping cart
+    - Product reviews and ratings
+    - Products Carousel
+    - Product Pagination
+    - Product Search
+    - User authentication
+    - User profile and orders
+    - Admin console
+    - Order management
+    - Checkout Process (shipping and payment)
+    - Paypal/Credit Card processing.
+
 ## Technologies incorporated:
     - React
+    - React Router
+    - JWT Authentication
     - Redux
     - Django
     - Postgres
     - SQL
     - Paypal API
     - Bootstrap
+    - Heroku and AWS deployment
 
 ## Plan Summary
 
