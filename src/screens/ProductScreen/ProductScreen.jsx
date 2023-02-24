@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Row, Col, Image, ListGroup, Button, Card, ListGroupItem } from 'react-bootstrap'
+import { Row, Col, Image, ListGroup, Button, Card, ListGroupItem, Form } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import {listProductDetails} from '../../actions/productActions'
@@ -13,9 +13,8 @@ import Loader from '../../components/Loader/Loader'
 import Message from '../../components/Message/Message'
 
 const ProductScreen = () => {
-
+  const [qty, setQty] = useState(1)
   const {id} = useParams()
-  // console.log(id);
 
   const dispatch = useDispatch()
   const productDetails = useSelector(state => state.productDetails)
@@ -85,6 +84,26 @@ const ProductScreen = () => {
                     </Col>
                   </Row>
                 </ListGroupItem>
+
+                {product.countInStock > 0 && (
+                  <ListGroupItem>
+                    <Row>
+                      <Col>Qty</Col>
+                      <Col xs='auto' className='my-1'>
+                        <Form.Control as='select' value={qty} onChange={(e) => setQty(e.target.value)}>
+                          {
+                            [...Array(product.countInStock).keys()].map((x) => (
+                              <option value={x + 1} key={x+1}>
+                                {x + 1}
+                              </option>
+                            ))
+                          }
+
+                        </Form.Control>
+                      </Col>
+                    </Row>
+                  </ListGroupItem>
+                )}
   
                 <ListGroupItem>
                   <Button className='btn-block' type='button' disabled={product.countInStock == 0}>Add to Cart</Button>
