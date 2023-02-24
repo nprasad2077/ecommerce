@@ -15,20 +15,25 @@ const HomeScreen = () => {
   useEffect(() => {
     dispatch(listProducts())
 
-  }, [])
+  }, [dispatch])
 
 
 
   return (
     <div>
         <h1>Latest Products</h1>
-        <Row>
-            {products.map((prod) => (
-                <Col key={prod._id} sm={12} md={6} lg={4} xl={3}>
-                    <Product prod={prod}/>
-                </Col>
-            ))}
-        </Row>
+        {loading ? <h2>Loading...</h2> : error ? <h3>{error}</h3> :
+                
+            <Row>
+                {products.map((prod) => (
+                    <Col key={prod._id} sm={12} md={6} lg={4} xl={3}>
+                        <Product prod={prod}/>
+                    </Col>
+                ))}
+            </Row> }
+
+
+
     </div>
   )
 }
