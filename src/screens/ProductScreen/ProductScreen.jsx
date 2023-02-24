@@ -13,16 +13,15 @@ import products from '../../products'
 const ProductScreen = () => {
 
   const {id} = useParams()
-  console.log(id);
+  // console.log(id);
 
   const dispatch = useDispatch()
+  const productDetails = useSelector(state => state.productDetails)
+  const {loading, error, product} = productDetails
 
   useEffect(() => {
     dispatch(listProductDetails(id))
   }, [])
-
-  let product = {}
-
 
 
 
