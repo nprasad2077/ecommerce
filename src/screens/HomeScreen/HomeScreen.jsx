@@ -6,6 +6,8 @@ import {listProducts} from '../../actions/productActions'
 
 // Component
 import Product from '../../components/Product/Product'
+import Loader from '../../components/Loader/Loader'
+import Message from '../../components/Message/Message'
 
 const HomeScreen = () => {
   const dispatch = useDispatch()
@@ -22,7 +24,7 @@ const HomeScreen = () => {
   return (
     <div>
         <h1>Latest Products</h1>
-        {loading ? <h2>Loading...</h2> : error ? <h3>{error}</h3> :
+        {loading ? <Loader /> : error ? <Message variant='danger'>{error}</Message> :
                 
             <Row>
                 {products.map((prod) => (
