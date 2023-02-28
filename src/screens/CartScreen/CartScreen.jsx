@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import {Row, Col, ListGroup, Image, Form, Button, Card} from 'react-bootstrap'
+import {Row, Col, ListGroup, Image, Form, Button, Card, ListGroupItem} from 'react-bootstrap'
 import {addToCart} from '../../actions/cartActions'
 import { useParams } from 'react-router-dom'
 import Message from '../../components/Message/Message'
@@ -37,7 +37,22 @@ const CartScreen = ({history}) => {
           </Message>
         ): (
           <ListGroup variant='flush'>
+            {cartItems.map(item => (
+              <ListGroupItem key={item.product}>
+                <Row>
+                  <Col md={2}>
+                    <Image src={item.image} alt={item.name} fluid rounded />
+                  </Col>
+                  <Col md={3}>
+                    <Link to={`/product/${item.product}`}>{item.name}</Link>
+                  </Col>
+                  <Col md={2}>
+                    ${item.price}
+                  </Col>
+                </Row>
 
+              </ListGroupItem>
+            ))}
           </ListGroup>
         )}
       </Col>
