@@ -54,7 +54,7 @@ const CartScreen = ({history}) => {
                     ${item.price}
                   </Col>
                   <Col md={3}>
-                    <Form.Control as='select' value={item.qty} onChange={(e) => dispatch(addToCart(item.product, e.target.value))}>
+                    <Form.Control as='select' value={item.qty} onChange={(e) => dispatch(addToCart(item.product, Number(e.target.value)))}>
                           {
                             [...Array(item.countInStock).keys()].map((x) => (
                               <option value={x + 1} key={x+1}>
@@ -83,7 +83,7 @@ const CartScreen = ({history}) => {
         <Card>
           <ListGroup variant='flush'>
             <ListGroupItem>
-              <h2>Subtotal</h2>
+              <h2>Subtotal ({cartItems.reduce((acc, item) => acc + item.qty, 0)})</h2>
             </ListGroupItem>
           </ListGroup>
         </Card>
