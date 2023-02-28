@@ -80,6 +80,13 @@ const CartScreen = ({history}) => {
       </Col>
 
       <Col md={4}>
+        <Card>
+          <ListGroup variant='flush'>
+            <ListGroupItem>
+              <h2>Subtotal</h2>
+            </ListGroupItem>
+          </ListGroup>
+        </Card>
       </Col>
 
     </Row>
