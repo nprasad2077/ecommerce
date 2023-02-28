@@ -8,13 +8,19 @@ import Message from '../../components/Message/Message'
 
 
 
-const CartScreen = ({match, history}) => {
+const CartScreen = ({history}) => {
   const {id} = useParams()
   const location = useLocation()
-  const productID = id
-  const qty = location.search
+  const dispatch = useDispatch()
+  const productId = id
+  const qty = location.search ? Number(location.search.split('=')[1]) : 1
 
-  console.log(qty);
+  useEffect(() => {
+    if(productId){
+      dispatch(addToCart(productId, qty))
+    }
+
+  }, [dispatch, productId, qty])
 
 
   return (
