@@ -17,7 +17,6 @@ const CartScreen = ({history}) => {
 
   const cart = useSelector(state => state.cart)
   const {cartItems} = cart
-  console.log(cartItems);
 
   useEffect(() => {
     if(productId){
@@ -28,7 +27,25 @@ const CartScreen = ({history}) => {
 
 
   return (
-    <div>Cart</div>
+    <Row>
+
+      <Col md={8}>
+        <h1>Shopping Cart</h1>
+        {cartItems.length === 0 ? (
+          <Message variant='info'>
+            Your cart is empty <Link to='/'>Go Back</Link>
+          </Message>
+        ): (
+          <ListGroup variant='flush'>
+
+          </ListGroup>
+        )}
+      </Col>
+
+      <Col md={4}>
+      </Col>
+
+    </Row>
   )
 }
 
