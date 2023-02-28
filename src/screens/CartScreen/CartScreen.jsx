@@ -60,6 +60,13 @@ const CartScreen = ({history}) => {
                           }
                     </Form.Control>
                   </Col>
+
+                  <Col md={1}>
+                    <Button type='button' variant='light'>
+                      <i className='fas fa-trash'></i>
+
+                    </Button>
+                  </Col>
                 </Row>
 
               </ListGroupItem>
