@@ -25,6 +25,10 @@ const CartScreen = ({history}) => {
 
   }, [dispatch, productId, qty])
 
+  const removeFromCartHandler = (id) => {
+    console.log('remove', id);
+  }
+
 
   return (
     <Row>
@@ -62,7 +66,7 @@ const CartScreen = ({history}) => {
                   </Col>
 
                   <Col md={1}>
-                    <Button type='button' variant='light'>
+                    <Button type='button' variant='light' onClick={() => removeFromCartHandler(item.product)}>
                       <i className='fas fa-trash'></i>
 
                     </Button>
