@@ -15,7 +15,7 @@ export const login = (email, password) => async (dispatch) => {
             }
         }
 
-        const {data} = await axios.post('http://127.0.0.1:8000/api/users/login', {'username': email, 'password': password}, config)
+        const {data} = await axios.post('http://127.0.0.1:8000/api/users/login/', {'username': email, 'password': password}, config)
 
         dispatch({
             type: USER_LOGIN_SUCCESS,

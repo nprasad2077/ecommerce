@@ -6,17 +6,28 @@ import Loader from '../../components/Loader/Loader'
 import Message from '../../components/Message/Message'
 import FormContainer from '../../components/FormContainer/FormContainer'
 import { login } from '../../actions/userActions'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 const LoginScreen = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const dispatch = useDispatch()
     const location = useLocation()
+    const navigation = useNavigate()
     const redirect = location.search ? location.search.split('=')[1] : '/'
+
+    const userLogin = useSelector(state => state.userLogin)
+    const {error, loading, userInfo} = userLogin
+
+    useEffect(() => {
+        if (userInfo) {
+            navigation(redirect)
+        }
+    }, [navigation, userInfo, redirect])
 
     const submitHandler = (e) => {
         e.preventDefault()
-        console.log('submit');
+        dispatch(login(email, password))
     }
 
 
