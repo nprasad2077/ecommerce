@@ -15,6 +15,7 @@ const CartScreen = ({history}) => {
   const navigate = useNavigate()
   const productId = id
   const qty = location.search ? Number(location.search.split('=')[1]) : 1
+  
 
   console.log(location.search);
 
@@ -36,11 +37,7 @@ const CartScreen = ({history}) => {
   }
 
   const checkoutHandler = () => {
-    if (userInfo){
-      navigate('/shipping')
-    } else {
-      navigate('/login')
-    }
+    navigate('/login?redirect=/shipping')
   }
 
 
