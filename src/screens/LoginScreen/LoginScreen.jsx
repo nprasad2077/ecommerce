@@ -13,17 +13,22 @@ const LoginScreen = () => {
     const [password, setPassword] = useState('')
     const dispatch = useDispatch()
     const location = useLocation()
-    const navigation = useNavigate()
+    const navigate = useNavigate()
     const redirect = location.search ? location.search.split('=')[1] : '/'
 
     const userLogin = useSelector(state => state.userLogin)
-    const {error, loading, userInfo} = userLogin
+    const { error, loading, userInfo } = userLogin
+
 
     useEffect(() => {
         if (userInfo) {
-            navigation(redirect)
+            navigate(redirect)
         }
-    }, [navigation, userInfo, redirect])
+    }, [navigate, userInfo, redirect])
+
+
+
+
 
     const submitHandler = (e) => {
         e.preventDefault()
