@@ -28,6 +28,7 @@ const PlaceorderScreen = () => {
                             {cart.shippingAddress.country}
                         </p>
                     </ListGroupItem>
+
                     <ListGroupItem>
                         <h2>Payment Method</h2>
                         <p>
@@ -35,6 +36,26 @@ const PlaceorderScreen = () => {
                             {cart.paymentMethod}
                         </p>
                     </ListGroupItem>
+
+                    <ListGroupItem>
+                        <h2>Order Items</h2>
+                        {cart.cartItems.length === 0 ? <Message variant='info'>
+                            Your cart is empty
+                        </Message> : (
+                            <ListGroup variant='flush'>
+                                {cart.cartItems.map((item, index) => (
+                                    <ListGroupItem key={index}>
+                                        <Row>
+                                            <Col md={1}>
+                                                <Image src={item.image} alt={item.name} fluid rounded/>
+                                            </Col>
+                                        </Row>
+                                    </ListGroupItem>
+                                ))}
+                            </ListGroup>
+                        )}
+                    </ListGroupItem>
+
                 </ListGroup>
             </Col>
 
