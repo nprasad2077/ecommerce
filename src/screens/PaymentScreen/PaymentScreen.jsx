@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import FormContainer from '../../components/FormContainer/FormContainer'
 import CheckoutSteps from '../../components/CheckoutSteps/CheckoutSteps'
 import { useLocation, useNavigate } from 'react-router-dom'
-// import {savePaymentMethod} from '../../actions/cartActions'
+import {savePaymentMethod} from '../../actions/cartActions'
 
 const PaymentScreen = () => {
 
@@ -22,7 +22,7 @@ const PaymentScreen = () => {
 
   const submitHandler = (e) => {
     e.preventDefault()
-    // dispatch(savePaymentMethod(paymentMethod))
+    dispatch(savePaymentMethod(paymentMethod))
     navigate('/placeorder')
   }
 
