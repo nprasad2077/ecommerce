@@ -53,6 +53,10 @@ const PlaceorderScreen = () => {
                                             <Col>
                                                 <Link to={`/product/${item.product}`}>{item.name}</Link>
                                             </Col>
+
+                                            <Col md={4}>
+                                                {item.qty} X ${item.price} = ${(item.qty * item.price).toFixed(2)}
+                                            </Col>
                                         </Row>
                                     </ListGroupItem>
                                 ))}
