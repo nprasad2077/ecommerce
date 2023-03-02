@@ -54,6 +54,7 @@ const ProfileScreen = () => {
                 'email': email,
                 'password': password,
             }))
+            setMessage('')
         } 
     }
 
