@@ -10,6 +10,12 @@ import Message from '../../components/Message/Message'
 const PlaceorderScreen = () => {
     const cart = useSelector(state => state.cart)
 
+    cart.itemsPrice = cart.cartItems.reduce((acc, item) => acc + item.price * item.qty, 0).toFixed(2)
+
+    const placeOrder = () => {
+       console.log('order'); 
+    }
+
 
   return (
     <div>
@@ -76,7 +82,7 @@ const PlaceorderScreen = () => {
 
                         <ListGroupItem>
                             <Row>
-                                <Col>Item: </Col>
+                                <Col>Items: </Col>
                                 <Col>${cart.itemsPrice}</Col>
                             </Row>
                         </ListGroupItem>
@@ -103,7 +109,7 @@ const PlaceorderScreen = () => {
                         </ListGroupItem>
 
                         <ListGroupItem>
-                            <Button>
+                            <Button type='button' className='btn-block' disabled={cart.cartItems === 0} onClick={placeOrder}>
                                 Place Order
                             </Button>
                         </ListGroupItem>
