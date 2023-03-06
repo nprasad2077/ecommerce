@@ -14,6 +14,8 @@ const PlaceorderScreen = () => {
     cart.shippingPrice = (cart.itemsPrice > 100 ? 0 : 10).toFixed(2)
     cart.taxPrice = Number(((0.0625) * cart.itemsPrice).toFixed(2))
 
+    cart.totalPrice = Number(cart.itemsPrice) + Number(cart.shippingPrice) + Number(cart.taxPrice)
+
     const placeOrder = () => {
        console.log('order'); 
     }
