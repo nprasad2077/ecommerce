@@ -11,6 +11,7 @@ const PlaceorderScreen = () => {
     const cart = useSelector(state => state.cart)
 
     cart.itemsPrice = cart.cartItems.reduce((acc, item) => acc + item.price * item.qty, 0).toFixed(2)
+    cart.shippingPrice = (cart.itemsPrice > 100 ? 0 : 10).toFixed(2)
 
     const placeOrder = () => {
        console.log('order'); 
