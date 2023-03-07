@@ -5,10 +5,18 @@ import CheckoutSteps from '../../components/CheckoutSteps/CheckoutSteps'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import Message from '../../components/Message/Message'
+import { createOrder } from '../../actions/orderActions'
 
 
 const PlaceorderScreen = () => {
+    const orderCreate = useSelector(state => state.orderCreate)
+    const {order, error, success} = orderCreate
+
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
     const cart = useSelector(state => state.cart)
+
+
 
     cart.itemsPrice = cart.cartItems.reduce((acc, item) => acc + item.price * item.qty, 0).toFixed(2)
     cart.shippingPrice = (cart.itemsPrice > 100 ? 0 : 10).toFixed(2)
@@ -16,8 +24,26 @@ const PlaceorderScreen = () => {
 
     cart.totalPrice = (Number(cart.itemsPrice) + Number(cart.shippingPrice) + Number(cart.taxPrice)).toFixed(2)
 
+    if (!cart.paymentMethod){
+        navigate('/payment')
+    }
+
+    useEffect(() => {
+        if (success) {
+            navigate(`/order/${order._id}`)
+        }
+    }, [success, navigate])
+
     const placeOrder = () => {
-       console.log('order'); 
+       dispatch(createOrder({
+        orderItems: cart.cartItems,
+        shippingAddress: cart.shippingAddress,
+        paymentMethod: cart.paymentMethod,
+        itemsPrice: cart.itemsPrice,
+        shippingPrice: cart.shippingPrice,
+        taxPrice: cart.taxPrice,
+        totalPrice: cart.totalPrice,
+       }))
     }
 
 
@@ -110,6 +136,11 @@ const PlaceorderScreen = () => {
                                 <Col>Total Price:</Col>
                                 <Col>${cart.totalPrice}</Col>
                             </Row>
+                        </ListGroupItem>
+
+                        <ListGroupItem>
+                            {error && <Message variant='danger'>{error}</Message>}
+
                         </ListGroupItem>
 
                         <ListGroupItem>
