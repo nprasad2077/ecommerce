@@ -6,7 +6,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import Message from '../../components/Message/Message'
 import { createOrder } from '../../actions/orderActions'
-
+import { ORDER_CREATE_RESET } from '../../constants/orderConstants'
 
 const PlaceorderScreen = () => {
     const orderCreate = useSelector(state => state.orderCreate)
@@ -31,6 +31,7 @@ const PlaceorderScreen = () => {
     useEffect(() => {
         if (success) {
             navigate(`/order/${order._id}`)
+            dispatch({type: ORDER_CREATE_RESET})
         }
     }, [success, navigate])
 
