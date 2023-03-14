@@ -8,6 +8,7 @@ import { register } from '../../actions/userActions'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { getUserDetails, updateUserProfile } from '../../actions/userActions'
 import { USER_UPDATE_PROFILE_RESET } from '../../constants/userConstants'
+import { listMyOrders } from '../../actions/orderActions'
 
 
 const ProfileScreen = () => {
@@ -36,6 +37,7 @@ const ProfileScreen = () => {
             if(!userInfo || !user.name || success)  {
                 dispatch({type: USER_UPDATE_PROFILE_RESET})
                 dispatch(getUserDetails('profile'))
+                dispatch(listMyOrders())
             } else {
                 setName(user.name)
                 setEmail(user.email)
