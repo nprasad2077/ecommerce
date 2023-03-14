@@ -19,6 +19,8 @@ const OrderScreen = () => {
         order.itemsPrice = order.orderItems.reduce((acc, item) => acc + item.price * item.qty, 0).toFixed(2)
     }
 
+    // AVffVSsk5xRljctxIjDhuu4bCNpXRL7NIOswpMhyPB5yObjU24Z8oFcUDPVb-ae1fXvMDiJFxYgvx4zY
+
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
