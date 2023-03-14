@@ -27,7 +27,7 @@ const OrderScreen = () => {
             dispatch(getOrderDetails(orderId))
         }
         
-    }, [order, orderId])
+    }, [dispatch, order, orderId])
 
 
   return loading ? (
