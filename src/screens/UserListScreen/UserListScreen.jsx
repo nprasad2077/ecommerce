@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import Loader from '../../components/Loader/Loader'
 import Message from '../../components/Message/Message'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { listUsers } from '../../actions/userActions'
+import { listUsers, deleteUser } from '../../actions/userActions'
 
 const UserListScreen = () => {
     const dispatch = useDispatch()
@@ -17,6 +17,9 @@ const UserListScreen = () => {
     const userLogin = useSelector(state => state.userLogin)
     const {userInfo} = userLogin
 
+    const userDelete = useSelector(state => state.userDelete)
+    const {success: successDelete} = userDelete
+
     useEffect(()=> {
         if (userInfo && userInfo.isAdmin){
             dispatch(listUsers())
@@ -24,10 +27,10 @@ const UserListScreen = () => {
             navigate('/login')
         }
         
-    }, [dispatch, navigate])
+    }, [dispatch, navigate, successDelete])
 
     const deleteHandler = (id) => {
-        console.log(id)
+        dispatch(deleteUser(id))
     }
 
   return (
