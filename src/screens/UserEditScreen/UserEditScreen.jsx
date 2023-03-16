@@ -23,8 +23,14 @@ const UserEditScreen = () => {
     const {error, loading, user} = userDetails
 
     useEffect(() => {
-
-    }, [])
+        if (!user.name || user._id !== Number(userId)) {
+            dispatch(getUserDetails(userId))
+        } else {
+            setName(user.name)
+            setEmail(user.email)
+            setIsAdmin(user.isAdmin)
+        }
+    }, [user, userId])
 
     const submitHandler = (e) => {
         e.preventDefault()
