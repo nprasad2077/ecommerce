@@ -51,7 +51,7 @@ const OrderScreen = () => {
             if(!window.paypal){
                 addPayPalScript()
             } else {
-                sdkReady(true)
+                setSdkReady(true)
             }
         }
         
