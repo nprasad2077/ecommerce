@@ -50,6 +50,10 @@ const OrderScreen = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
+        if (!userInfo){
+            navigate('/login')
+        }
+        
         if (!order || successPay || order._id !== Number(orderId) || successDeliver){
             dispatch({type: ORDER_PAY_RESET})
             dispatch({type: ORDER_DELIVER_RESET})
@@ -197,7 +201,7 @@ const OrderScreen = () => {
                         )}
 
                     </ListGroup>
-
+                    {loadingDeliver && <Loader />}
                     {userInfo && userInfo.isAdmin && order.isPaid && !order.isDelivered && (
                         <ListGroupItem>
                             <Button type='button' className='btn btn-block' onClick={deliverHandler}>
