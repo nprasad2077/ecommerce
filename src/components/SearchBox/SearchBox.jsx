@@ -9,6 +9,11 @@ const SearchBox = () => {
 
     const submitHandler = (e) => {
         e.preventDefault()
+        if (keyword){
+            navigate(`/?keyword=${keyword}`)
+        }else {
+            navigate('/')
+        }
     }
 
   return (
