@@ -13,7 +13,7 @@ const Paginate = ({pages, page, keyword='', isAdmin=false}) => {
     <Pagination>
         {[...Array(pages).keys()].map((x) => (
             <LinkContainer key={x+1} to={{
-                pathname: '/',
+                pathname: !isAdmin ? '/': '/admin/productlist/',
                 search: `?keyword=${keyword}&page=${x + 1}`
             }}>
                 <Pagination.Item active={x+1 === page}>
@@ -29,5 +29,3 @@ const Paginate = ({pages, page, keyword='', isAdmin=false}) => {
 }
 
 export default Paginate
-
-// /?keyword=${keyword}&page=${x + 1}
