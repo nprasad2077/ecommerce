@@ -10,6 +10,7 @@ import Product from '../../components/Product/Product'
 import Loader from '../../components/Loader/Loader'
 import Message from '../../components/Message/Message'
 import Paginate from '../../components/Paginate/Paginate'
+import ProductCarousel from '../../components/ProductCarousel/ProductCarousel'
 
 const HomeScreen = () => {
   const location = useLocation()
@@ -30,6 +31,7 @@ const HomeScreen = () => {
 
   return (
     <div>
+        <ProductCarousel />
         <h1>Latest Products</h1>
         {loading ? <Loader /> : error ? <Message variant='danger'>{error}</Message> :
             
