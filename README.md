@@ -66,3 +66,9 @@ To keep track of inventory and orders, the e-commerce site will need to implemen
 Step 9: Test and Launch
 
 Automated testing will be implented and frontend/backend applications will be deployed.
+
+## Installation.
+
+- Clone down backend at https://github.com/nprasad2077/ecommerce-backend and start server on localhost.
+- In the root folder of this project, run the command `npm install`.
+- After installation, run the command `npm run dev` to start the ProShop application.
