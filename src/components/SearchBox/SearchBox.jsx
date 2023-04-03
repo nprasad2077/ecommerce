@@ -18,13 +18,22 @@ const SearchBox = () => {
 
   return (
     <Form onSubmit={submitHandler} inline>
-        <FormControl type='text' name='q' onChange={(e) => setKeyword(e.target.value)} className='mr-sm-2 ml-sm-5' >
+        <div className='d-inline-flex p-2'>
+            <Form.Control
+                type='text'
+                name='q'
+                onChange={(e) => setKeyword(e.target.value)}
+                className='mr-sm-2 ml-sm-5'
+            ></Form.Control>
 
-        </FormControl>
-        <Button type='submit' variant='outline-success' className='p-2'>
-            Submit
-        </Button>
-
+            <Button
+                type='submit'
+                variant='outline-success'
+                className='p-2 mx-2'
+            >
+                Submit
+            </Button>
+        </div>
     </Form>
   )
 }
