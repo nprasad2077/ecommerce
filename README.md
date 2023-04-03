@@ -1,4 +1,9 @@
-# E-Commerce Application (In development 😁👷‍♂️👷👷‍♀️)
+# E-Commerce Application (Ready to Deploy!😁)
+
+Top Products Carousel ![Screenshot 2023-04-03 at 3 17 39 PM](https://user-images.githubusercontent.com/114438461/229618898-98bf3618-b7c1-40b5-b9c3-102c8a549c37.png)
+Product Details Page with reviews [Screenshot 2023-04-03 at 3 18 41 PM](https://user-images.githubusercontent.com/114438461/229619165-cbecc133-5b68-4ccb-bbe5-74613fa0121a.png)
+
+
 
 ## Features
     - Full feature product shopping cart
