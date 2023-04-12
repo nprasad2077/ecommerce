@@ -1,13 +1,13 @@
-# E-Commerce Application (Ready to Deploy!😁)
+# E-Commerce Application 
 
-Top products carousel ![Screenshot 2023-04-03 at 3 17 39 PM](https://user-images.githubusercontent.com/114438461/229618898-98bf3618-b7c1-40b5-b9c3-102c8a549c37.png)
-Product details page with reviews ![Screenshot 2023-04-03 at 3 18 41 PM](https://user-images.githubusercontent.com/114438461/229619165-cbecc133-5b68-4ccb-bbe5-74613fa0121a.png)
-Latest products ![Screenshot 2023-04-03 at 3 19 39 PM](https://user-images.githubusercontent.com/114438461/229619873-53bcda52-8892-4886-88d6-104fe4ea3085.png)
-User orders panel![Screenshot 2023-04-03 at 3 20 49 PM](https://user-images.githubusercontent.com/114438461/229619993-44c15cca-66a8-4d7f-9d87-838ec00d5717.png)
-Cart functionality ![Screenshot 2023-04-03 at 3 19 55 PM](https://user-images.githubusercontent.com/114438461/229620176-63d67813-ca06-4b95-bd1d-f35e08505676.png)
-Order details with paypal/stripe integration ![Screenshot 2023-04-03 at 3 20 25 PM](https://user-images.githubusercontent.com/114438461/229620342-358f4630-3212-4ff9-815d-9b7beb0af310.png)![Screenshot 2023-04-03 at 3 19 19 PM](https://user-images.githubusercontent.com/114438461/229620962-8fc50e12-f9d4-406e-b44a-05c278b587dd.png)
-Admin products view ![Screenshot 2023-04-03 at 3 19 32 PM](https://user-images.githubusercontent.com/114438461/229620897-a4053f17-4340-4d45-89df-7f7b2199f118.png)
-Admin panel for user management ![Screenshot 2023-04-03 at 3 18 53 PM](https://user-images.githubusercontent.com/114438461/229621015-c26e0f82-975a-41d7-9486-a086d85b54ff.png)
+## Database Tables Overview.
+
+![diagram](https://user-images.githubusercontent.com/114438461/229670075-5b5ebcc7-39cc-47d2-bcd6-eee28befd28b.png)
+
+
+## Routes overview.
+
+<img width="1461" alt="Screenshot 2023-04-03 at 6 04 25 PM" src="https://user-images.githubusercontent.com/114438461/229645690-fd1da1b4-4800-44e4-8b19-878aaf084418.png">
 
 [Django/Python Backend.](https://github.com/nprasad2077/ecommerce-backend)
 
@@ -78,8 +78,11 @@ Step 9: Test and Launch
 
 Automated testing will be implented and frontend/backend applications will be deployed.
 
-## Installation.
-
-- Clone down backend at https://github.com/nprasad2077/ecommerce-backend and start server on localhost.
-- In the root folder of this project, run the command `npm install`.
-- After installation, run the command `npm run dev` to start the ProShop application.
+Top products carousel ![Screenshot 2023-04-03 at 3 17 39 PM](https://user-images.githubusercontent.com/114438461/229618898-98bf3618-b7c1-40b5-b9c3-102c8a549c37.png)
+Product details page with reviews ![Screenshot 2023-04-03 at 3 18 41 PM](https://user-images.githubusercontent.com/114438461/229619165-cbecc133-5b68-4ccb-bbe5-74613fa0121a.png)
+Latest products ![Screenshot 2023-04-03 at 3 19 39 PM](https://user-images.githubusercontent.com/114438461/229619873-53bcda52-8892-4886-88d6-104fe4ea3085.png)
+User orders panel![Screenshot 2023-04-03 at 3 20 49 PM](https://user-images.githubusercontent.com/114438461/229619993-44c15cca-66a8-4d7f-9d87-838ec00d5717.png)
+Cart functionality ![Screenshot 2023-04-03 at 3 19 55 PM](https://user-images.githubusercontent.com/114438461/229620176-63d67813-ca06-4b95-bd1d-f35e08505676.png)
+Order details with paypal/stripe integration ![Screenshot 2023-04-03 at 3 20 25 PM](https://user-images.githubusercontent.com/114438461/229620342-358f4630-3212-4ff9-815d-9b7beb0af310.png)![Screenshot 2023-04-03 at 3 19 19 PM](https://user-images.githubusercontent.com/114438461/229620962-8fc50e12-f9d4-406e-b44a-05c278b587dd.png)
+Admin products view ![Screenshot 2023-04-03 at 3 19 32 PM](https://user-images.githubusercontent.com/114438461/229620897-a4053f17-4340-4d45-89df-7f7b2199f118.png)
+Admin panel for user management ![Screenshot 2023-04-03 at 3 18 53 PM](https://user-images.githubusercontent.com/114438461/229621015-c26e0f82-975a-41d7-9486-a086d85b54ff.png)
