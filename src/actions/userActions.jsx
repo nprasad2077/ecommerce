@@ -36,6 +36,7 @@ import {
 import { ORDER_LIST_MY_RESET } from '../constants/orderConstants'
 
 
+// Login user action
 export const login = (email, password) => async (dispatch) => {
 
     try { 
@@ -49,25 +50,27 @@ export const login = (email, password) => async (dispatch) => {
             }
         }
 
+        // Make a POST request to login endpoint and send email and password in the request body
         const {data} = await axios.post('http://127.0.0.1:8000/api/users/login/', {'username': email, 'password': password}, config)
 
+        // Dispatch action to indicate successful login and set user data in state
         dispatch({
             type: USER_LOGIN_SUCCESS,
             payload: data
         })
 
+        // Save user info in local storage
         localStorage.setItem('userInfo', JSON.stringify(data))
 
     } catch(error) {
+        // If login fails, dispatch an error message with the details
         dispatch({
             type: USER_LOGIN_FAIL,
             payload: error.response && error.response.data.detail
             ? error.response.data.detail
             : error.message
         })
-
     }
-
 }
 
 export const logout = () => (dispatch) => {
