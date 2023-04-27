@@ -125,12 +125,14 @@ export const register = (name, email, password) => async (dispatch) => {
   }
 };
 
+// Get user details action
 export const getUserDetails = (id) => async (dispatch, getState) => {
   try {
     dispatch({
       type: USER_DETAILS_REQUEST,
     });
 
+    // Get user info from state
     const {
       userLogin: { userInfo },
     } = getState();
@@ -142,16 +144,19 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
       },
     };
 
+    // Make a GET request to get the user details with the provided ID
     const { data } = await axios.get(
       `http://127.0.0.1:8000/api/users/${id}/`,
       config
     );
 
+    // Dispatch action to set user details in state
     dispatch({
       type: USER_DETAILS_SUCCESS,
       payload: data,
     });
   } catch (error) {
+    // If there is an error, dispatch an error message with the details
     dispatch({
       type: USER_DETAILS_FAIL,
       payload:
@@ -162,12 +167,14 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
   }
 };
 
+// Update user profile action
 export const updateUserProfile = (user) => async (dispatch, getState) => {
   try {
     dispatch({
       type: USER_UPDATE_PROFILE_REQUEST,
     });
 
+    // Get user info from state
     const {
       userLogin: { userInfo },
     } = getState();
@@ -179,12 +186,14 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
       },
     };
 
+    // Make a PUT request to update the user profile
     const { data } = await axios.put(
       `http://127.0.0.1:8000/api/users/profile/update/`,
       user,
       config
     );
 
+    // Dispatch actions to update user profile and set user data in state
     dispatch({
       type: USER_UPDATE_PROFILE_SUCCESS,
       payload: data,
@@ -195,8 +204,10 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
       payload: data,
     });
 
+    // Save updated user info in local storage
     localStorage.setItem("userInfo", JSON.stringify(data));
   } catch (error) {
+    // If there is an error, dispatch an error message with the details
     dispatch({
       type: USER_UPDATE_PROFILE_FAIL,
       payload:
